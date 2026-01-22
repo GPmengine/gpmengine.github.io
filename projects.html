@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Έργα - Portfolio" data-en="Projects - Portfolio">Έργα - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" data-el="Αρχική" data-en="Home">Αρχική</a>
+    <a href="about.html" data-el="Σχετικά" data-en="About Me">Σχετικά</a>
+    <a href="skills.html" data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</a>
+    <a href="projects.html" data-el="Έργα" data-en="Projects">Έργα</a>
+    <a href="thesis.html" data-el="Πτυχιακή" data-en="Thesis">Πτυχιακή</a>
+    <a href="contact.html" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    <div class="lang-switch">
+        <span id="lang-el" class="active" onclick="setLanguage('el')">EL</span> |
+        <span id="lang-en" onclick="setLanguage('en')">EN</span>
+    </div>
+</nav>
+<section>
+<h2 data-el="Έργα" data-en="Projects">Έργα</h2>
+<div class="projects">
+	
+	<div class="cardE" onclick="document.getElementById('lb1').style.display='flex'">
+        <div class="lightbox img">Project 1 </div>
+  	<img src="prressing_key.jpg" alt="prressing key image" class="gen-img">
+        <p data-el="Κλειδί πρέσας ακεταλικών" data-en="prressing key">Κλειδί image</p>
+    </div>
+    
+	<div class="cardE" onclick="document.getElementById('lb2').style.display='flex'">
+        <div class="lightbox img">Project 2 </div>
+     <a href="Door_part_SShow.html">
+     <img src="Kipri_d1.jpg" alt="Door part image" class="gen-img"></a>
+        <p data-el="Εξάρτημα πόρτας" data-en="Door part">Κιπρί image</p> 
+    </div>
+	
+	<div class="cardE" onclick="document.getElementById('lb3').style.display='flex'">
+        <div class="lightbox img">Project 3 </div>
+    <a href="Metal_base_SShow.html">
+    <img src="BASE.jpg" alt="Metel base image" class="gen-img"></a>
+		<p data-el="Βάση μεταλική " data-en="Metal base">Βάση μεταλική image</p>
+    </div>
+   
+    <div class="cardE" onclick="document.getElementById('lb4').style.display='flex'">
+        <div class="lightbox img">Project 4 </div>
+    <a href="Grinding_stone_SShow.html">
+    <img src="Trimmer.jpg" alt="Grinding stone image" class="gen-img"></a>
+        <p data-el="Βάση πέτρας λείανσης" data-en="Grinding stone base">Τροχός Πέτρας image</p>
+    </div>
+    
+    
+    
+</div>
+</section>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => el.textContent = el.getAttribute("data-" + lang));
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+<div id="lb1" class="lightbox" onclick="this.style.display='none'"><img src="prressing_key.jpg" alt="prressing key image"></div>
+<div id="lb2" class="lightbox" onclick="this.style.display='none'"><img src="Kipri_d1.jpg " alt="Door part image"></div>
+<div id="lb3" class="lightbox" onclick="this.style.display='none'"><img src="BASE.jpg" alt="metal base image"></div>
+<div id="lb4" class="lightbox" onclick="this.style.display='none'"><img src="Trimmer.jpg" alt="Grinding stone image"></div>
+
+<footer>
+	<div class="div2">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

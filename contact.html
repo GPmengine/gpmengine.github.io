@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Επικοινωνία - Portfolio" data-en="Contact - Portfolio">Επικοινωνία - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" data-el="Αρχική" data-en="Home">Αρχική</a>
+    <a href="about.html" data-el="Σχετικά" data-en="About Me">Σχετικά</a>
+    <a href="skills.html" data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</a>
+    <a href="projects.html" data-el="Έργα" data-en="Projects">Έργα</a>
+    <a href="thesis.html" data-el="Πτυχιακή" data-en="Thesis">Πτυχιακή</a>
+    <a href="contact.html" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    <div class="lang-switch">
+        <span id="lang-el" class="active" onclick="setLanguage('el')">EL</span> |
+        <span id="lang-en" onclick="setLanguage('en')">EN</span>
+    </div>
+</nav>
+<section>
+<h2 data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</h2>
+<div class="div2"><div class="card" data-el="Μπορείτε να επικοινωνήσετε μέσω email ή WhatsApp." data-en="Feel free to reach out via email or WhatsApp."></div></p>
+</div>
+<div class="div2">
+<div class="contact a">
+<a href="mailto:9eorge.panagopoulos@gmail.com" data-el="Email" data-en="Email">Email</a>
+<a href="https://wa.me/6946525978" data-el="WhatsApp" data-en="WhatsApp">Email</a>
+</div>
+</div>
+</section>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => el.textContent = el.getAttribute("data-" + lang));
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+<footer>
+	<div class="div3">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

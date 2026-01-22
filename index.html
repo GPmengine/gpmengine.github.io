@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Αρχική - Portfolio" data-en="Home - Portfolio">Αρχική - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" data-el="Αρχική" data-en="Home">Αρχική</a>
+    <a href="about.html" data-el="Σχετικά" data-en="About Me">Σχετικά</a>
+    <a href="skills.html" data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</a>
+    <a href="projects.html" data-el="Έργα" data-en="Projects">Έργα</a>
+    <a href="thesis.html" data-el="Πτυχιακή" data-en="Thesis">Πτυχιακή</a>
+    <a href="contact.html" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    <div class="lang-switch">
+        <span id="lang-el" class="active" onclick="setLanguage('el')">EL</span> |
+        <span id="lang-en" onclick="setLanguage('en')">EN</span>
+    </div>
+</nav>
+<header>
+    <h1 data-el="Γιώργος Παναγόπουλος" data-en="George Panagopoulos">I</h1>
+    <p data-el="Μηχανολόγος Μηχανικός – Σχεδιασμός & Κατασκευές" data-en="Mechanical Engineer – Design & Prototyping">
+        Μηχανολόγος Μηχανικός Τ.Ε
+    </p>
+    <p data-el="Σχεδιάζω και υλοποιώ καινοτόμες λύσεις μηχανικής" data-en="I design and implement innovative mechanical solutions">
+         καινοτόμες λύσεις
+    </p>
+		<a href="thesis.html">
+    <img src="3Axis_CNCouter.jpg" alt="3-Axis CNC Image" class="H-img"></a>
+</header>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+    });
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+<footer>
+	<div class="div2">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

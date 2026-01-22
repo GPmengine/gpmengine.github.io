@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Σχετικά - Portfolio" data-en="About Me - Portfolio">Σχετικά - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" data-el="Αρχική" data-en="Home">Αρχική</a>
+    <a href="about.html" data-el="Σχετικά" data-en="About Me">Σχετικά</a>
+    <a href="skills.html" data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</a>
+    <a href="projects.html" data-el="Έργα" data-en="Projects">Έργα</a>
+    <a href="thesis.html" data-el="Πτυχιακή" data-en="Thesis">Πτυχιακή</a>
+    <a href="contact.html" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    <div class="lang-switch">
+        <span id="lang-el" class="active" onclick="setLanguage('el')">EL</span> |
+        <span id="lang-en" onclick="setLanguage('en')">EN</span>
+    </div>
+</nav>
+<section>
+<h2 data-el="Σχετικά με μένα" data-en="About Me">Σχετικά με μένα</h2>
+<div class="cardA">
+<p  data-el="Είμαι Μηχανολόγος Μηχανικός Τεχνολογικής Eκπαίδευσης διαθέτοντας άδεια άσκησης επαγγέλματος τεχνικών εφαρμογών και εργοδηγικών δραστηριοτήτων 
+    σε ηλεκτρολογικές, ψυκτικές, κάυσεως, μηχανολογικές και υδραυλικές εγκαταστάσεις, σύμφωνα με 
+    τη νομοθεσία."
+   data-en="I am a Mechanical Engineer with a Technological Education degree, licensed to technical, applied and construction activities 
+in electrical, refrigeration, combustion, mechanical and hydraulic installations, in accordance with 
+the legislation.">
+
+
+  <h3 data-el="Πεδίο δραστηριοτήτων" data-en="Field of activities"></h3>
+  <ul>
+    <li><strong data-el="Ηλεκτρολογικές εγκαταστάσεις:" data-en="Electrical installations:"></strong><a data-el="εγκατάσταση και συντήρηση ηλεκτρικών συστημάτων." data-en="installation and maintenance of electrical systems."></a></li>
+    <li><strong data-el="Ψυκτικές εγκαταστάσεις:" data-en="Refrigeration installations:"></strong><a data-el="εργοδηγία σε συστήματα ψύξης και κλιματισμού." data-en="foreman in refrigeration and air conditioning systems."></a></li>
+    <li><strong data-el="Καύσεις και θέρμανση:" data-en="Combustion and heating:"></strong><a data-el="εγκαταστάσεις και επιτήρηση κεντρικών λεβήτων και καυστήρων." data-en="installations and monitoring of central boilers and burners."></a></li>
+    <li><strong data-el="Μηχανολογικές και υδραυλικές εγκαταστάσεις:" data-en="Mechanical and hydraulic installations:"></strong><a data-el="εργοδηγία, εφαρμογή και συντήρηση μικρών και μεσαίων έργων." data-en="construction management, implementation and maintenance of small and medium-sized projects."></a></li>
+    <li><strong data-el="Συγκολλήσεις / Οξυγονοκολλήσεις:" data-en="Welding / Brazing:"></strong><a data-el="επίβλεψη και εκτέλεση εργασιών Β’ Τάξης." data-en="supervision and execution of Class B work."></a></li>
+  </ul>
+  <h3 data-el="Δεξιότητες και Ικανότητες" data-en="Skills and Abilities"></h3>
+  <ul>
+    <li data-el="Σχεδιασμός και εφαρμογή κατασκευαστικών σχεδίων για έργα μικρής και μεσαίας κλίμακας." data-en="Design and implementation of construction plans for small and medium-scale projects."></li>
+     <li data-el="Επίβλεψη και συντονισμός συνεργείων." data-en="Supervision and coordination of crews."></li>
+      <li data-el="Δοκιμές, συντήρηση και ρύθμιση συστημάτων HVAC, ψύξης, θέρμανσης και υδραυλικών." data-en="Testing, maintenance and adjustment of HVAC, refrigeration, heating and plumbing systems."></li>
+       <li data-el="Τήρηση κανονισμών ασφαλείας και ελληνικών προτύπων." data-en="Compliance with safety regulations and Greek standards."></li>
+  </ul>
+
+  <p data-el="Προσεγγίζω κάθε έργο με πρακτικότητα και προσοχή στη λεπτομέρεια, διασφαλίζοντας ότι οι εγκαταστάσεις 
+    λειτουργούν με ασφάλεια, αποδοτικότητα και συμμόρφωση με τη νομοθεσία." data-en="I approach each project with practicality and attention to detail, ensuring that facilities 
+operate safely, efficiently and in compliance with legislation."></p>
+  </div>
+
+</section>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+    });
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+<footer>
+	<div class="div2">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

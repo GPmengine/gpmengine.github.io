@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Πτυχιακή - Portfolio" data-en="Thesis - Portfolio">Πτυχιακή - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<iframe
+  src="3Axis_CNC.pdf#toolbar=0"
+  width="100%"
+  height="1000"
+  style="border:none"
+></iframe>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => el.textContent = el.getAttribute("data-" + lang));
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+</body>
+</html>

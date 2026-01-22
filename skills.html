@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Δεξιότητες - Portfolio" data-en="Skills - Portfolio">Δεξιότητες - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="index.html" data-el="Αρχική" data-en="Home">Αρχική</a>
+    <a href="about.html" data-el="Σχετικά" data-en="About Me">Σχετικά</a>
+    <a href="skills.html" data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</a>
+    <a href="projects.html" data-el="Έργα" data-en="Projects">Έργα</a>
+    <a href="thesis.html" data-el="Πτυχιακή" data-en="Thesis">Πτυχιακή</a>
+    <a href="contact.html" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    <div class="lang-switch">
+        <span id="lang-el" class="active" onclick="setLanguage('el')">EL</span> |
+        <span id="lang-en" onclick="setLanguage('en')">EN</span>
+    </div>
+</nav>
+<section>
+<h2 data-el="Δεξιότητες" data-en="Skills">Δεξιότητες</h2>
+<div class="skills">
+    <div class="card" data-el="Inventor" data-en="Inventor">Inventor</div>
+    <div class="card" data-el="AutoCAD" data-en="AutoCAD">AutoCAD</div>
+    <div class="card" data-el="Fusion 360" data-en="Fusion 360">Fusion 360</div>
+    <div class="card" data-el="MATLAB / Python" data-en="MATLAB / Python">MATLAB / Python</div>
+    <div class="card" data-el="3D Εκτύπωση & CNC" data-en="3D Printing & CNC">3D Εκτύπωση & CNC</div>
+    <div class="card" data-el="Πρωτοτυποποίηση & Συγκόλληση" data-en="Prototyping & Welding">Πρωτοτυποποίηση & Συγκόλληση</div>
+</div>
+</section>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => el.textContent = el.getAttribute("data-" + lang));
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+</script>
+<footer>
+	<div class="div3">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>

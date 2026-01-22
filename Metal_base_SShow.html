@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-el="Βάση μεταλική - Portfolio" data-en="Metal base - Portfolio">Αρχική - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+<h2 class="SS-center"data-el="Βάση μεταλική" data-en="Metal base">Βάση μεταλική image</h2>
+<div class="contact a back">
+<b><a  href="projects.html" data-el= "X" data-en="X"></a></b>
+</div>
+<div class="SS-content SS-display-container ">
+  <img class="mySlides" src="BASE.jpg" style="width:100%">
+  <img class="mySlides" src="BASE_LOW.jpg" style="width:100%">
+  <img class="mySlides" src="BASE_UP.jpg" style="width:100%">
+  <video  class="mySlides" width="100%" height="100%" controls><source src="BASE.mp4" type="video/mp4">Your browser does not support the video.</video>
+  
+  <button class="SS-button SS-black SS-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="SS-button SS-black SS-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+function setLanguage(lang) {
+    document.querySelectorAll("[data-el]").forEach(el => el.textContent = el.getAttribute("data-" + lang));
+    document.getElementById("lang-el").classList.toggle("active", lang === "el");
+    document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    localStorage.setItem("language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "el";
+    setLanguage(savedLang);
+});
+
+</script>
+<footer>
+	<div class="div2">
+    <p>&copy; 2026 George Panagopoulos. All rights reserved.</p></div>
+  </footer>
+
+</body>
+
+</html>
